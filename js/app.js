@@ -656,7 +656,7 @@ for (const btnOrder of btnOrders) {
       order.classList.add('_active');
       order.style.maxHeight = order.scrollHeight + 20 + "px";
     }
-    window.addEventListener("resize", resizeOrder);
+    //window.addEventListener("resize", resizeOrder);
     function resizeOrder() {
       if (btnOrder.classList.contains('_active') && order.classList.contains('_active')) {
         btnOrder.classList.remove('_active');
@@ -671,6 +671,8 @@ for (const btnOrder of btnOrders) {
 const solutions = document.querySelector('.solutions__content');
 const hideBtnSolutions = document.querySelector('.solutions__hide-btn');
 const hideTextSolutions = document.querySelector('.solutions__hide-text');
+const headerHeight = document.querySelector('.header__container').offsetHeight;
+let rectSolutionsTop = solutions.getBoundingClientRect().top;
 solutions.style.maxHeight = solutions.scrollHeight + "px";
 if (hideBtnSolutions && solutions) {
   hideBtnSolutions.addEventListener('click', hideSolution);
@@ -680,6 +682,12 @@ if (hideBtnSolutions && solutions) {
     if (solutions.classList.contains('_hide')) {
       solutions.style.maxHeight = 0;
       hideTextSolutions.textContent = 'ПОКАЗАТЬ решения';
+      if (rectSolutionsTop < headerHeight) {
+        setTimeout(function() {
+          let scr = new SmoothScroll();
+          scr.animateScroll(document.querySelector('.solutions'),'', {speed: 1000});
+        }, 1000);
+      }
     } else {
       solutions.style.maxHeight = solutions.scrollHeight + "px";
       solutions.style.overflow = 'hidden';
@@ -1207,7 +1215,7 @@ if (goto_links) {
 }
 
 function _goto(target_block, speed, offset = 0) {
-	let header = '';
+	let header = '.header__container';
 	//OffsetHeader
 	//if (window.innerWidth < 992) {
 	//	header = 'header';

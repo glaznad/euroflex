@@ -1952,20 +1952,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 50px;
   max-width: 80%;
   background-color: #e1c1c1;
-  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.24);
-          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.24);
-  border-radius: 4px;
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5), 0px 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5), 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   font-size: 18px;
   font-weight: 700;
   line-height: 146.5%;
 }
 
 .popup__close {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 7px;
+  right: 7px;
   cursor: pointer;
   z-index: 30;
   background: url("../img/icons/close.svg") 0 0 no-repeat;
@@ -3547,6 +3547,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
   .production-digits__item {
     max-width: 45%;
+  }
+
+  .production-slider__pagination-item {
+    width: 15px;
+    height: 15px;
   }
 
   .banner__container {
